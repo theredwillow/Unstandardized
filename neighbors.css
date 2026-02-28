@@ -1,4 +1,6 @@
 :root {
+  --confucius-active-step: 1;
+
   --lazer-bunny-color: #808080;
   --lazer-bunny-lighter-color: color-mix(
     in srgb,
@@ -17,18 +19,61 @@
   );
 }
 
+#back-button {
+  margin: 10px;
+}
+
 #header {
-  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+#confucius {
+  border: 1px solid #aaaaaa;
   border-radius: 5px;
   padding: 5px;
+  height: 400px;
+  width: 500px;
+  overflow: hidden;
 }
 
-.neighborhood > :not([id]) {
-  background-color: yellow;
-  padding: 5px;
-  margin: 5px;
+#confucius .circle {
+  position: relative;
+  top: 22px;
+  left: 22px;
+  width: 500px;
+  height: 500px;
+  background: #0066ff;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
 }
 
+/* All content steps */
+#confucius .content div {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+/* Active content step */
+#confucius .content .active {
+  display: block;
+}
+
+#confucius img {
+  width: 425px;
+  height: auto;
+}
+
+/* All neighbors ============================================================ */
 .neighbor-title {
   font-size: 1.5em;
   font-weight: bold;
@@ -37,6 +82,14 @@
   border: 2px solid var(--lazer-bunny-darker-color);
 }
 
+/* Neighbors under construction ============================================= */
+.neighborhood > :not([id]) {
+  background-color: yellow;
+  padding: 5px;
+  margin: 5px;
+}
+
+/* lazer-bunny ============================================================== */
 #lazer-bunny {
   padding: 10px;
   background: repeating-conic-gradient(
