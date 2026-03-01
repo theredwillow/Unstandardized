@@ -2,3 +2,4 @@ _site/
 *.zip
 .vscode
 node_modules/
+inspo/
