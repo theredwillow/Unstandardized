@@ -1,0 +1,33 @@
+name: Deploy to Neocities
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: deploy-to-neocities
+      cancel-in-progress: true
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Eleventy
+        run: npx @11ty/eleventy
+
+      - name: Deploy to Neocities
+        uses: bcomnes/deploy-to-neocities@v2
+        with:
+          api_token: ${{ secrets.NEOCITIES_API_KEY }}
+          cleanup: true # Set to true to delete files on Neocities not in your build
+          dist_dir: _site # Default 11ty output folder; change if yours is different
