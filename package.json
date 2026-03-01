@@ -1,0 +1,16 @@
+{
+  "name": "unstandardized",
+  "version": "1.0.0",
+  "description": "This is what Neocities calls its zip file downloads. I think it makes sense to keep it consistent with their methodologies.\r It contains the _site folder and the assets.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx eleventy --serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}
