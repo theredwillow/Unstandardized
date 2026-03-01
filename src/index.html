@@ -19,11 +19,11 @@ layout: layouts/base.html
   recognized that web buttons are all the rage. I'm personally a big fan of
   88x31's, so I'm gonna start there.
   <div id="web-button-gallery">
-    <!-- TODO for loop over shrines/  -->
-    <a href="/shrines/{shrine-name}" target="_blank">
-      <img src="/shrines/{shrine-name}/button-88x31.png" />
+    {%- for shrine in shrines %}
+    <a href="/shrines/{{ shrine }}" target="_blank">
+      <img src="/shrines/{{ shrine }}/button-88x31.png" />
     </a>
-    <!-- TODO end for loop -->
+    {%- endfor %}
   </div>
 </div>
 
