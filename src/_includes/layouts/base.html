@@ -17,6 +17,13 @@
     {% endfor %}
   </head>
   <body>
+    {% if page.url != "/" %}
+    <header>
+      <nav>
+        <a href="/">← Back to home page</a>
+      </nav>
+    </header>
+    {% endif %}
     {{ content | safe }}
   </body>
 </html>
