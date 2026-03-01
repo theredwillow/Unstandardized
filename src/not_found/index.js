@@ -15,7 +15,7 @@ const man = document.getElementById("man");
 const text = document.getElementById("text");
 setTimeout(() => {
   if (man) {
-    man.src = src = "/assets/404_image_2.png";
+    man.src = "404_image_2.png";
   }
 
   if (text) {
