@@ -1,0 +1,45 @@
+html,
+body {
+  height: 95vh; /* Ensures html and body elements cover the full viewport height */
+  margin: 0; /* Removes default browser margins, preventing scrollbars */
+}
+
+body {
+  background-image: url("/assets/404_background.png"); /* Specifies the path to your image */
+  background-position: center; /* Centers the image within the viewport */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-size: cover; /* Scales the image to cover the entire container while maintaining aspect ratio */
+}
+
+#text {
+  height: 95vh;
+  width: 100vw;
+  position: absolute;
+  z-index: 20;
+  color: white;
+  font-weight: bold;
+  font-size: 12vh;
+  text-align: center;
+}
+
+#shrine {
+  position: absolute;
+  width: 11vw;
+  height: 33vh;
+  z-index: 10;
+  bottom: 22vh;
+  left: 44vw;
+  text-align: center;
+  font-weight: bold;
+  font-size: 6vh;
+  padding: 2vh;
+}
+
+#man {
+  height: 75vh;
+  width: 60vw;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+}
