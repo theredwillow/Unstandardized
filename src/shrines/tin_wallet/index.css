@@ -1,0 +1,102 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  text-align: center;
+}
+
+#intro {
+  width: 60%;
+  margin: auto;
+}
+
+#layout {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  width: 95%;
+  margin: auto;
+}
+
+#layout[data-state="closed"] .column.opened {
+  display: none;
+}
+
+#layout[data-state="closed"] .tin .opened {
+  display: none;
+}
+
+#layout[data-state="opened"] .column.closed {
+  display: none;
+}
+
+#layout[data-state="opened"] .tin .closed {
+  display: none;
+}
+
+.tin img {
+  cursor: pointer;
+  max-width: 100%;
+  height: auto;
+}
+
+.column {
+  width: 25%;
+  padding: 10px;
+  align-content: center;
+}
+
+.column.center {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+
+@keyframes shake {
+  /* The shake animation happens within the first 1 second (20% of 5s) */
+  0%,
+  20%,
+  40% {
+    transform: translateX(0);
+  }
+  5%,
+  15%,
+  25%,
+  35% {
+    transform: translateX(-5px);
+  }
+  10%,
+  30% {
+    transform: translateX(5px);
+  }
+
+  /* From 40% to 100%, the text remains static (4 seconds pause) */
+  40%,
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.call-to-action {
+  animation: shake 5s infinite;
+  font-size: 24px;
+  font-weight: bold;
+  color: red;
+}
+
+.visit-others {
+  font-style: italic;
+}
+
+#webring-navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: bold;
+}
+
+.fact {
+  width: 100%;
+}
