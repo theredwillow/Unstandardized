@@ -1,6 +1,8 @@
 ---
 title: Web Rings
 layout: layouts/base.html
+stylesheets:
+  - index.css
 ---
 
 <h1>Hey! Where are all the web ring embeds?!!!</h1>
@@ -12,9 +14,27 @@ encyclopedia of my "hidden" web rings!
 
 <ol>
   {%- for webring in webrings %}
-    <li>
-      <strong>{{ webring.name }}</strong>
-      <div>{{ webring.snippet | safe }}</div>
-    </li>
+  <li>
+    <strong>{{ webring.name }}</strong>
+    <div>{{ webring.snippet | safe }}</div>
+  </li>
   {%- endfor %}
 </ol>
+
+<div id="ringlink">
+  <div>
+    To the right, you'll see a blurb for a random webring. This is a service
+    coordinated by <a href="https://evehibi.nekoweb.org/">evehibi</a>. I think
+    this is so cool. I hope to get a webring of my own off the ground soon and
+    added to this.
+  </div>
+  <div>
+    <iframe
+      width="260"
+      height="260"
+      style="border: none"
+      src="https://evehibi.nekoweb.org/ringlink/"
+      name="ringlink"
+    ></iframe>
+  </div>
+</div>

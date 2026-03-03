@@ -1,0 +1,6 @@
+#ringlink {
+  display: flex;
+  gap: 10px;
+  width: 50%;
+  justify-self: center;
+}
