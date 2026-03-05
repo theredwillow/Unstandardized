@@ -1,0 +1,32 @@
+#plumeslegumes .info {
+  border: 1px solid black;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#plumeslegumes .dia:not(.opened) {
+  display: none;
+}
+
+#plumeslegumes .dia {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  width: 90%;
+  height: 150px;
+  background-color: rgba(10, 95, 175, 0.5);
+  z-index: 100;
+  right: auto;
+  transform: translate(-50%, 0);
+  border: 5px solid white;
+  padding: 10px;
+  font-weight: bold;
+  color: white;
+}
+
+#plumeslegumes .dia img {
+  height: 100%;
+  width: auto;
+}

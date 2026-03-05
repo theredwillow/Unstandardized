@@ -3,8 +3,11 @@ title: Neighbors
 layout: layouts/base.html
 stylesheets:
   - index.css
+  - lazer-bunny.css
+  - plumeslegumes.css
 scripts:
-  - index.js
+  - lazer-bunny.js
+  - plumeslegumes.js
 ---
 
 <div id="header">
@@ -115,17 +118,39 @@ scripts:
     </div>
   </div>
 
-  <div>
+  <div id="plumeslegumes">
     <h1 class="neighbor-title">
       <a href="https://plumeslegumes.neocities.org/skeletons"
         >plumeslegumes' skeletons</a
       >
     </h1>
-    <div>
-      I discovered plumeslegumes through the very fun WIMSE webring. I really
-      like their skeletons page's crow. This is a recurring character they have
-      introduced for interactive dialogue. This reminds me of the NPC's in video
-      games. What a fun, unconventional way to interact with a website!
+    <button class="info found">How I found the page</button>
+    <div class="dia found">
+      <img src="./plumeslegumes/mesmorized.png" />
+      I discovered plumeslegumes through the very fun WIMSE webring.
+    </div>
+
+    <button class="info admired">What I really admired</button>
+    <div class="dia admired">
+      <img src="./plumeslegumes/excited.png" />
+      I really like their skeletons page's crow. There is a recurring character
+      they have introduced for interactive dialogue. This reminds me of the
+      NPC's in video games. What a fun, unconventional way to interact with a
+      website!
+    </div>
+
+    <button class="info imitated">How I imitated it</button>
+    <div class="dia imitated">
+      <img src="./plumeslegumes/sleuthing.png" />
+      They got their elements by ID and toggled their displays' between
+      <i>block</i> and <i>none</i>.
+    </div>
+
+    <button class="info added">How I added to it</button>
+    <div class="dia added">
+      <img src="./plumeslegumes/thinking.png" />
+      I separated out the style (css) from the template (html), then used
+      classes for references.
     </div>
   </div>
 </div>
