@@ -1,22 +1,5 @@
 :root {
   --confucius-active-step: 1;
-
-  --lazer-bunny-color: #808080;
-  --lazer-bunny-lighter-color: color-mix(
-    in srgb,
-    var(--lazer-bunny-color),
-    white 30%
-  );
-  --lazer-bunny-darker-color: color-mix(
-    in srgb,
-    var(--lazer-bunny-color),
-    black 30%
-  );
-  --lazer-bunny-darkest-color: color-mix(
-    in srgb,
-    var(--lazer-bunny-color),
-    black 40%
-  );
 }
 
 #back-button {
@@ -73,18 +56,29 @@
   height: auto;
 }
 
+.neighborhood {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
 /* All neighbors ============================================================ */
 .neighbor-title {
   font-size: 1.5em;
   font-weight: bold;
   margin: 2px;
   /* Ignore the linter error. Available across most browsers. https://caniuse.com/css-variables */
-  border: 2px solid var(--lazer-bunny-darker-color);
+  background-color: white;
+  padding: 4px;
+  border-radius: 5px;
 }
 
 /* Neighbors under construction ============================================= */
 .neighborhood > :not([id]) {
   background-color: yellow;
   padding: 5px;
-  margin: 5px;
+  min-height: 300px;
+  border: 5px solid black;
+  border-radius: 10px;
 }

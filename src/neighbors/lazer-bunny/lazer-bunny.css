@@ -1,3 +1,22 @@
+:root {
+  --lazer-bunny-color: #808080;
+  --lazer-bunny-lighter-color: color-mix(
+    in srgb,
+    var(--lazer-bunny-color),
+    white 30%
+  );
+  --lazer-bunny-darker-color: color-mix(
+    in srgb,
+    var(--lazer-bunny-color),
+    black 30%
+  );
+  --lazer-bunny-darkest-color: color-mix(
+    in srgb,
+    var(--lazer-bunny-color),
+    black 40%
+  );
+}
+
 #lazer-bunny {
   padding: 10px;
   background: repeating-conic-gradient(
@@ -16,11 +35,14 @@
   background-color: var(--lazer-bunny-color);
   padding: 12px;
   border-radius: 10px;
+  border: 5px solid var(--lazer-bunny-darkest-color);
 }
 
 #lazer-bunny .layout {
   display: flex;
   gap: 20px;
+  justify-content: space-around;
+  align-items: baseline;
 }
 
 #lazer-bunny .info {
@@ -29,6 +51,7 @@
   /* Ignore the linter error. " */
   border: 2px solid var(--lazer-bunny-darker-color);
   border-radius: 8px;
+  background-color: var(--lazer-bunny-color);
 }
 
 #lazer-bunny .info-title {
