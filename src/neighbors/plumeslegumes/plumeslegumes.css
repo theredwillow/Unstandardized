@@ -16,11 +16,11 @@
   left: 50%;
   width: 90%;
   height: 150px;
-  background-color: rgba(10, 95, 175, 0.5);
+  background-color: rgba(171, 164, 156, 0.85);
   z-index: 100;
   right: auto;
   transform: translate(-50%, 0);
-  border: 5px solid white;
+  border: 5px solid rgb(108 101 96);
   padding: 10px;
   font-weight: bold;
   color: white;

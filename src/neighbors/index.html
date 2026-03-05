@@ -127,14 +127,18 @@ scripts:
     <button class="info found">How I found the page</button>
     <div class="dia found">
       <img src="./plumeslegumes/mesmorized.png" />
-      I discovered plumeslegumes through the very fun WIMSE webring.
+      I discovered plumeslegumes through the very fun&nbsp;<a
+        href="https://plumeslegumes.neocities.org/WIMSE"
+        >WIMSE</a
+      >&nbsp;webring. Their tin wallet was decorated very nicely!
     </div>
 
     <button class="info admired">What I really admired</button>
     <div class="dia admired">
       <img src="./plumeslegumes/excited.png" />
-      I really like their skeletons page's crow. There is a recurring character
-      they have introduced for interactive dialogue. This reminds me of the
+      Clicking from their home page's skeleton, you find their skeletons page.
+      They have a recurring character that pops up a lot on this page, a crow
+      (complete with facial expressions). They introduce dialogue, similar to
       NPC's in video games. What a fun, unconventional way to interact with a
       website!
     </div>
@@ -142,15 +146,19 @@ scripts:
     <button class="info imitated">How I imitated it</button>
     <div class="dia imitated">
       <img src="./plumeslegumes/sleuthing.png" />
-      They got their elements by ID and toggled their displays' between
-      <i>block</i> and <i>none</i>.
+      I wanted to try my hand at one of these interactive dialogues myself. They
+      got their elements by ID and added onclick properties to each of them.
+      They then toggled their displays' style between `block` and `none`.
     </div>
 
     <button class="info added">How I added to it</button>
     <div class="dia added">
       <img src="./plumeslegumes/thinking.png" />
-      I separated out the style (css) from the template (html), then used
-      classes for references.
+      I separated out the style (css) from the template (html), using classes to
+      reference them. These common classes allowed my JavaScript to loop over
+      them dynamically. The `opened` class was established to be able to toggle
+      the CSS. I also used `addEventListener` instead of `onclick`, which aligns
+      with the best practice of separation of concerns too.
     </div>
   </div>
 </div>
