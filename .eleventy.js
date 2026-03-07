@@ -8,7 +8,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPlugin(pluginWebc, {
     components: [
-      "src/neighbors/*/*.webc",
+      "src/**/*.webc",
     ]
   });
 

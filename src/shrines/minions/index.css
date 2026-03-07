@@ -1,0 +1,81 @@
+:root {
+  --minion-yellow: #fce029;
+  --minion-blue: #0a75bc;
+  --minion-eye-color: #74472a;
+  --minion-black: #231f20;
+  --minion-white: #fefefe;
+  --minion-tongue: #b55050;
+  --minion-brown: #a87a51;
+  --minion-gray: #949699;
+}
+
+.tribe {
+  display: flex;
+  gap: 20px;
+}
+
+.minion {
+  background-color: var(--minion-yellow);
+  border-bottom: 100px solid var(--minion-blue);
+  border-radius: 20px;
+  padding: 30px;
+  min-width: 200px;
+}
+
+.minion .goggles {
+  display: flex;
+  background-color: var(--minion-black);
+  margin: 4px;
+  padding: 8px 20px;
+  border-radius: 4px;
+  color: var(--minion-white);
+}
+
+.minion .minion-eyes {
+  transform: scale(1.5);
+}
+
+.minion .eye-lid {
+  fill: var(--minion-yellow);
+}
+
+.minion .eye-white {
+  fill: var(--minion-white);
+  transition: ry 0.15s ease-in-out;
+  ry: 15;
+}
+
+.minion .eye.closed .eye-white {
+  ry: 0.1;
+}
+
+.minion .eye-frame {
+  fill-opacity: 0;
+  stroke: var(--minion-gray);
+  stroke-width: 5px;
+}
+
+.minion .title {
+  font-size: 32px;
+}
+
+.torso {
+  padding: 20px;
+}
+
+/* .kevin {
+
+}
+
+.stuart {
+
+}
+
+.bob {
+
+} */
+
+.note {
+  color: var(--minion-gray);
+  font-size: 12px;
+}
