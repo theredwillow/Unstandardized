@@ -75,7 +75,7 @@
 }
 
 /* Neighbors under construction ============================================= */
-.neighborhood > :not([id]) {
+.neighborhood > div {
   background-color: yellow;
   padding: 5px;
   min-height: 300px;

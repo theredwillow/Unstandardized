@@ -10,8 +10,8 @@ layout: layouts/base.html
   and giving a damn. I don't know what this page will be yet. I imagine a brain
   dump, like other Neocities pages. But perhaps there will be a certain emphasis
   in
-  <a href="/neighbors">appreciating others' spaces</a>, a highlight of what
-  I like about other people's pages.
+  <a href="/neighbors">appreciating others' spaces</a>, a highlight of what I
+  like about other people's pages.
 </p>
 
 <div>
@@ -19,9 +19,11 @@ layout: layouts/base.html
   recognized that web buttons are all the rage. I'm personally a big fan of
   88x31's, so I'm gonna start there.
   <div id="web-button-gallery">
-    {%- for shrine in shrines %}
-    <a href="/shrines/{{ shrine }}">
-      <img src="/shrines/{{ shrine }}/button-88x31.png" />
+    {%- for shrine in collections.shrine %} {% set pathParts =
+    shrine.filePathStem.split('/') %} {% set folderName =
+    pathParts[pathParts.length - 2] %}
+    <a href="/shrines/{{ folderName }}">
+      <img src="/shrines/{{ folderName }}/button-88x31.png" />
     </a>
     {%- endfor %}
   </div>

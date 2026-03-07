@@ -1,9 +1,19 @@
 const fs = require('fs');
 const path = require('path');
+const { RenderPlugin } = require("@11ty/eleventy");
+const pluginWebc = require("@11ty/eleventy-plugin-webc");
 
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addPlugin(RenderPlugin);
+
+  eleventyConfig.addPlugin(pluginWebc, {
+    components: [
+      "src/neighbors/*/*.webc",
+    ]
+  });
+
   eleventyConfig.addPassthroughCopy("src/robots.txt");
-  eleventyConfig.addPassthroughCopy("src/**/*.{png,js,css}");
+  eleventyConfig.addPassthroughCopy("src/**/*.{png,css}");
 
   // Get shrine names from the shrines directory
   eleventyConfig.addGlobalData("shrines", () => {
@@ -47,7 +57,7 @@ module.exports = function(eleventyConfig) {
       includes: '_includes',
       output: '_site',
     },
-    templateFormats: ['md', 'njk', 'html'],
+    templateFormats: ['md', 'njk', 'html', 'webc'],
     markdownTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
     dataTemplateEngine: 'njk',

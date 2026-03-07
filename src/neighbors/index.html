@@ -1,14 +1,9 @@
 ---
 title: Neighbors
 layout: layouts/base.html
-stylesheets:
-  - index.css
-  - lazer-bunny/lazer-bunny.css
-  - plumeslegumes/plumeslegumes.css
-scripts:
-  - lazer-bunny/lazer-bunny.js
-  - plumeslegumes/plumeslegumes.js
 ---
+
+<link rel="stylesheet" href="index.css" webc:scoped />
 
 <div id="header">
   <div>
@@ -55,110 +50,12 @@ scripts:
 </div>
 
 <div class="neighborhood">
-  <div>
-    <h1 class="neighbor-title">
-      <a href="https://burgernet.online/home">Burger Net</a>
-    </h1>
-    <div>
-      Em's home page layout uses imagery of a physical 90's bedroom. The
-      nostalgia is a ton of fun.
-    </div>
-  </div>
-
-  <div>
-    <h1 class="neighbor-title">
-      <a href="https://ninacti0n.art/">ninacti0n's Lab</a>
-    </h1>
-    <div>
-      Nina is able to imbue her art into her website. She is using CSS rotation
-      transform to align her text content to her uploaded images.
-    </div>
-  </div>
-
-  <div id="lazer-bunny">
-    <h1 class="neighbor-title">
-      <a href="https://lazer-bunny.neocities.org/">Lazer-Bunny</a>
-    </h1>
-    <section class="layout">
-      <div>
-        <button id="lazer-bunny-button">Click me!</button> to randomly change
-        the color scheme.
-      </div>
-      <div>
-        <div class="info admired">
-          <div class="info-title">What I really admired</div>
-          Lazer is able to display a lot of information in a well-organized, yet
-          beautiful monochromatic pink layout.
-        </div>
-        <div class="info imitated">
-          <div class="info-title">How I imitated it</div>
-          I used a similar monochromatic color scheme and organized my content
-          in a clean, structured way.
-        </div>
-        <div class="info added">
-          <div class="info-title">How I added to it</div>
-          I added a dynamic color-changing effect. Instead of using a background
-          image asset, I used CSS variables to define a dynamic color palette.
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <div>
-    <h1 class="neighbor-title">
-      <a href="https://darkosparko.nekoweb.org/shrines/pixarscars-shrine.html"
-        >darkosparko's Cars shrine</a
-      >
-    </h1>
-    <div>
-      Darkosparko's shrine to Pixar's Cars is a fascinating example of sticking
-      to a design that fits the purpose. This page has checkered flags baked
-      into the frames and Lightning's candy red paint color everywhere. It would
-      be really fun to pick a favorite movie of my own and theme a shrine to it.
-    </div>
-  </div>
-
-  <div id="plumeslegumes">
-    <h1 class="neighbor-title">
-      <a href="https://plumeslegumes.neocities.org/skeletons"
-        >plumeslegumes' skeletons</a
-      >
-    </h1>
-    <button class="info found">How I found the page</button>
-    <div class="dia found">
-      <img src="./plumeslegumes/mesmorized.png" />
-      I discovered plumeslegumes through the very fun&nbsp;<a
-        href="https://plumeslegumes.neocities.org/WIMSE"
-        >WIMSE</a
-      >&nbsp;webring. Their tin wallet was decorated very nicely!
-    </div>
-
-    <button class="info admired">What I really admired</button>
-    <div class="dia admired">
-      <img src="./plumeslegumes/excited.png" />
-      Clicking from their home page's skeleton, you find their skeletons page.
-      They have a recurring character that pops up a lot on this page, a crow
-      (complete with facial expressions). They introduce dialogue, similar to
-      NPC's in video games. What a fun, unconventional way to interact with a
-      website!
-    </div>
-
-    <button class="info imitated">How I imitated it</button>
-    <div class="dia imitated">
-      <img src="./plumeslegumes/sleuthing.png" />
-      I wanted to try my hand at one of these interactive dialogues myself. They
-      got their elements by ID and added onclick properties to each of them.
-      They then toggled their displays' style between `block` and `none`.
-    </div>
-
-    <button class="info added">How I added to it</button>
-    <div class="dia added">
-      <img src="./plumeslegumes/thinking.png" />
-      I separated out the style (css) from the template (html), using classes to
-      reference them. These common classes allowed my JavaScript to loop over
-      them dynamically. The `opened` class was established to be able to toggle
-      the CSS. I also used `addEventListener` instead of `onclick`, which aligns
-      with the best practice of separation of concerns too.
-    </div>
-  </div>
+  <!-- TODO Figure out how to dynamically generate array from webc files and populate this list -->
+  {% renderTemplate "webc" %}
+  <burgernet></burgernet>
+  <darkosparko></darkosparko>
+  <lazer-bunny></lazer-bunny>
+  <ninacti0n></ninacti0n>
+  <plumeslegumes></plumeslegumes>
+  {% endrenderTemplate %}
 </div>
