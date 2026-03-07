@@ -8,12 +8,10 @@ class Minion {
   }
 
   blink() {
-    console.log('kevin blinked');
+    console.log("kevin blinked");
     this.eyes.forEach((eye) => {
       eye.classList.toggle("closed");
-      setTimeout(() => {
-        eye.classList.toggle("closed");
-      }, 500);
+      setTimeout(() => eye.classList.toggle("closed"), 500);
     });
   }
 }

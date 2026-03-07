@@ -10,8 +10,24 @@
   xmlns:svg="http://www.w3.org/2000/svg"
 >
   <g class="eye">
+    <defs>
+      <mask id="eye-mask">
+        <ellipse
+          class="visible-area"
+          cx="25"
+          cy="25"
+          rx="25"
+          fill="white"
+        ></ellipse>
+      </mask>
+    </defs>
+
     <circle class="eye-lid" cx="25" cy="25" r="20" />
-    <ellipse class="eye-white" cx="25" cy="25" rx="20" />
+    <g mask="url(#eye-mask)">
+      <circle class="eye-white" cx="25" cy="25" r="20" fill="white" />
+      <circle class="pupil" cx="25" cy="25" r="7" fill="brown" />
+      <circle class="glint" cx="23" cy="22" r="2" fill="white" />
+    </g>
     <circle class="eye-frame" cx="25" cy="25" r="20" />
   </g>
 </svg>

@@ -41,11 +41,14 @@
 
 .minion .eye-white {
   fill: var(--minion-white);
+}
+
+.minion .visible-area {
   transition: ry 0.15s ease-in-out;
   ry: 15;
 }
 
-.minion .eye.closed .eye-white {
+.minion .eye.closed .visible-area {
   ry: 0.1;
 }
 
