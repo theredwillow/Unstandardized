@@ -58,7 +58,7 @@
   stroke-width: 5px;
 }
 
-.minion .title {
+.minion .goggles .title {
   font-size: 32px;
 }
 
@@ -78,7 +78,43 @@
 
 } */
 
-.note {
+.note,
+#devtools .about {
   color: var(--minion-gray);
   font-size: 12px;
+}
+
+#devtools .controls .title {
+  color: var(--minion-black);
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  margin-bottom: 10px;
+}
+
+#devtools .controls .console {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+#devtools .controls button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: var(--minion-gray);
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--minion-white);
+  letter-spacing: 2px;
+  box-shadow: color-mix(in srgb, var(--minion-gray), black 10%) 4px 4px 0 0;
+  border: 1px solid var(--minion-gray);
+}
+
+#devtools .controls button:active {
+  box-shadow: color-mix(in srgb, var(--minion-gray), var(--minion-blue)) 2px 2px 0 0;
+  transform: translate(2px, 2px);
+  background-color: color-mix(in srgb, var(--minion-gray), var(--minion-blue));
 }

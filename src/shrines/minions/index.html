@@ -47,8 +47,8 @@ stylesheets:
           >
         </li>
         <li>
-          <span class="note">Rough Idea</span> Create a tutorial about clipPath vs mask and how that related to your
-          struggle with minion's lid-mask.
+          <span class="note">Rough Idea</span> Create a tutorial about clipPath
+          vs mask and how that related to your struggle with minion's lid-mask.
         </li>
       </ul>
     </div>
@@ -63,5 +63,27 @@ stylesheets:
     <div class="torso">Welcome to the shrine</div>
   </div>
 
-  <div class="minion bob"></div>
+  <div id="devtools" class="minion bob">
+    <div class="goggles">
+      <h3 class="title">Control Panel</h3>
+    </div>
+
+    <div class="torso">
+      <p class="about">
+        This box is a temporary tool for use during web development.
+      </p>
+      <div class="controls">
+        <div class="title">Kevin's controls</div>
+        <div class="console">
+          <button
+            onmousedown="javascript: kevin.closeEye();"
+            onmouseup="javascript: kevin.openEye();"
+            onmouseout="javascript: kevin.openEye();"
+          >
+            Blink
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
