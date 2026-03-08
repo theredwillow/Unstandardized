@@ -1,13 +1,164 @@
-<div>
-  <h1 class="neighbor-title">
-    <a href="https://darkosparko.nekoweb.org/shrines/pixarscars-shrine.html"
-      >darkosparko's Cars shrine</a
-    >
-  </h1>
-  <div>
-    Darkosparko's shrine to Pixar's Cars is a fascinating example of sticking to
-    a design that fits the purpose. This page has checkered flags baked into the
-    frames and Lightning's candy red paint color everywhere. It would be really
-    fun to pick a favorite movie of my own and theme a shrine to it.
+<link rel="stylesheet" href="index.css" />
+<script src="minion-eyes.js"></script>
+
+<div id="darkosparko">
+  <div class="tribe">
+    <div class="minion kevin">
+      <div class="goggles">
+        <h3 class="title">
+          <a
+            href="https://darkosparko.nekoweb.org/shrines/pixarscars-shrine.html"
+            >darkosparko's Cars shrine</a
+          >
+        </h3>
+        <div>
+          <minion-eyes></minion-eyes>
+        </div>
+      </div>
+
+      <div class="torso">
+        <p class="info admired">
+          <div class="note">What I admired</div> Darkosparko's shrine to
+          Pixar's Cars is a fascinating example of sticking to a design that
+          fits the purpose. Their page has checkered flags baked into the frames
+          and Lightning's candy red paint color everywhere.
+        </p>
+        <p class="info imitated">
+          <div class="note">How I imitated</div>I'll admit I'm not a huge
+          Minions fan. I think they're cute, but they are overdone. Originally I
+          thought about making a blog post about hyper-marketing's affect on
+          creative vision, but I'm a programmer not a political philosopher. This allowed me to play with CSS color variables and what not.
+        </p>
+        <p class="info added">
+          <div class="note">What I added</div> I wanted to give some
+          personality to the boxes. Having the SVG eyes track you is a classic
+          frontend flex that I wanted to document my ability to do. There's a
+          lot of room for creativity here if I decide to come back to this
+          project, such as having one of the Minions track a butterfly
+          fluttering by or having them react to a user
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/API/Document/selectionchange_event"
+            target="_blank"
+          >
+            selecting text</a
+          >.
+        </p>
+      </div>
+    </div>
+
+    <div class="to-do minion stuart">
+      <div class="goggles">
+        <h3 class="title">"To Do"</h3>
+        <div>
+          <minion-eyes></minion-eyes>
+        </div>
+      </div>
+
+      <div class="torso">
+        <p>Here are some ideas to expand upon this theme...</p>
+        <ul>
+          <li>
+            Write 11ty code to create different versions of minion-eyes.svg to
+            be used with different classes
+          </li>
+          <li>
+            Establish a file-specific cSpell solution to handle Minionese words.
+          </li>
+          <li>Create a minionese lorem epsom generator.</li>
+          <li>Add a mouth to the svg.</li>
+          <li>
+            <span class="note">STRETCH</span> Create client-side javascript to
+            animate minion-eyes.svg eyes.
+          </li>
+          <li>
+            <span class="note">Rough Idea</span> Warning sign with text,
+            <i
+              >"This shrine has been overtaken by an elite team of henchmen. The
+              state of this page may be ever changing."</i
+            ><br />
+            <br />
+            Public notice notes include:
+            <i
+              >"Proceed with caution.", "Creatures may speak foreign language.",
+              "Creatures worship most evil beings in site, take careful note of
+              their mass migrations."</i
+            >
+          </li>
+          <li>
+            <span class="note">Rough Idea</span> Create a tutorial about
+            clipPath vs mask and how that related to your struggle with minion's
+            lid-mask.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="devtools" class="minion bob">
+      <div class="goggles">
+        <h3 class="title">Control Panel</h3>
+        <div>
+          <minion-eyes></minion-eyes>
+        </div>
+      </div>
+
+      <div class="torso">
+        <p class="about">
+          This box is a temporary tool for use during web development.
+        </p>
+
+        <div class="controls">
+          <div class="title">Kevin's controls</div>
+          <div class="console">
+            <button
+              onmousedown="javascript: kevin.closeEye('left');"
+              onmouseup="javascript: kevin.openEye('left');"
+              onmouseout="javascript: kevin.openEye('left');"
+            >
+              Blink Left
+            </button>
+            <button
+              onmousedown="javascript: kevin.closeEye('right');"
+              onmouseup="javascript: kevin.openEye('right');"
+              onmouseout="javascript: kevin.openEye('right');"
+            >
+              Blink Right
+            </button>
+          </div>
+        </div>
+
+        <div class="controls">
+          <div class="title">Stuart's controls</div>
+          <div class="console">
+            <button
+              onmousedown="javascript: stuart.closeEye('left');"
+              onmouseup="javascript: stuart.openEye('left');"
+              onmouseout="javascript: stuart.openEye('left');"
+            >
+              Blink Left
+            </button>
+          </div>
+        </div>
+
+        <div class="controls">
+          <div class="title">Bob's controls</div>
+          <div class="console">
+            <button
+              onmousedown="javascript: bob.closeEye('left');"
+              onmouseup="javascript: bob.openEye('left');"
+              onmouseout="javascript: bob.openEye('left');"
+            >
+              Blink Left
+            </button>
+            <button
+              onmousedown="javascript: bob.closeEye('right');"
+              onmouseup="javascript: bob.openEye('right');"
+              onmouseout="javascript: bob.openEye('right');"
+            >
+              Blink Right
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

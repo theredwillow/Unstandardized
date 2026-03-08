@@ -11,21 +11,26 @@
 
 .tribe {
   display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   gap: 20px;
+  align-items: flex-end;
 }
 
 .minion {
   background-color: var(--minion-yellow);
   border-bottom: 100px solid var(--minion-blue);
   border-radius: 20px;
-  padding: 30px;
+  padding: 60px 40px 0;
   min-width: 200px;
+  max-width: 550px;
+  height: 100%;
 }
 
 .minion .goggles {
   display: flex;
   background-color: var(--minion-black);
-  margin: 4px -30px;
+  margin: 4px -40px;
   padding: 8px 20px;
   border-radius: 4px;
   color: var(--minion-white);
@@ -74,8 +79,12 @@
   font-size: 32px;
 }
 
-.torso {
-  padding: 20px;
+.minion .torso {
+  padding: 4px 30px;
+  max-height: 200px;
+  overflow-y: auto;
+  scrollbar-color: white var(--minion-blue);
+  border-left: 17px solid var(--minion-blue);
 }
 
 /* .kevin {
@@ -90,7 +99,7 @@
 
 } */
 
-.note,
+.minion .note,
 #devtools .about {
   color: var(--minion-gray);
   font-size: 12px;
@@ -128,7 +137,8 @@
 }
 
 #devtools .controls button:active {
-  box-shadow: color-mix(in srgb, var(--minion-gray), var(--minion-blue)) 2px 2px 0 0;
+  box-shadow: color-mix(in srgb, var(--minion-gray), var(--minion-blue)) 2px 2px
+    0 0;
   transform: translate(2px, 2px);
   background-color: color-mix(in srgb, var(--minion-gray), var(--minion-blue));
 }
