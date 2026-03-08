@@ -31,6 +31,14 @@
   color: var(--minion-white);
 }
 
+.minion .eye.left {
+  transform: translate(-20px, 0);
+}
+
+.minion .eye.right {
+  transform: translate(20px, 0);
+}
+
 .minion .minion-eyes {
   transform: scale(1.5);
 }

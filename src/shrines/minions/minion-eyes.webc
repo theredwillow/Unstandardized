@@ -23,7 +23,7 @@
     </defs>
 
     <circle class="eye-lid" cx="25" cy="25" r="20" />
-    <g mask="url(#eye-mask)">
+    <g class="under-eyelid" mask="url(#eye-mask)">
       <circle class="eye-white" cx="25" cy="25" r="20" />
       <g class="pupil">
         <circle class="eye-color" cx="25" cy="25" r="7" />

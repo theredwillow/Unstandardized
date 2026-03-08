@@ -76,11 +76,18 @@ stylesheets:
         <div class="title">Kevin's controls</div>
         <div class="console">
           <button
-            onmousedown="javascript: kevin.closeEye();"
-            onmouseup="javascript: kevin.openEye();"
-            onmouseout="javascript: kevin.openEye();"
+            onmousedown="javascript: kevin.closeEye('left');"
+            onmouseup="javascript: kevin.openEye('left');"
+            onmouseout="javascript: kevin.openEye('left');"
           >
-            Blink
+            Blink Left
+          </button>
+          <button
+            onmousedown="javascript: kevin.closeEye('right');"
+            onmouseup="javascript: kevin.openEye('right');"
+            onmouseout="javascript: kevin.openEye('right');"
+          >
+            Blink Right
           </button>
         </div>
       </div>

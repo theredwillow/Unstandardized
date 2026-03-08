@@ -1,32 +1,42 @@
 console.log("Minion eyes script loaded!");
 
-// TODO Dynamically change number of eyes by the character
-// const MINIONS = {
-//   kevin: {
-//     eyes: 2
-//   },
-//   stuart: {
-//     eyes: 1
-//   },
-//   bob: {
-//     eyes: 2
-//   }
-// };
+const MINIONS = {
+  kevin: {
+    eyes: 2
+  },
+  stuart: {
+    eyes: 1
+  },
+  bob: {
+    eyes: 2
+  }
+};
 
 const tribe = document.body.querySelector(".tribe");
 
 class Minion {
   constructor(name) {
     this.name = name;
+
     this._minion = document.body.querySelector(`.minion.${name}`);
-    const eyeElements = [...this._minion.querySelectorAll(".eye")];
-    eyeElements.forEach((eye) => {
+    this._leftEye = this._minion.querySelector(".eye");
+
+    const { eyes: numberOfEyes } = MINIONS[name];
+    if (numberOfEyes > 1) {
+      this._rightEye = this._leftEye.cloneNode(true);
+      this._leftEye.classList.add("left");
+      this._rightEye.classList.add("right");
+      this._rightEye.querySelector("#eye-mask").setAttribute("id", "right-eye-mask");
+      this._rightEye.querySelector(".under-eyelid").setAttribute("mask", "url(#right-eye-mask)");
+      this._minion.querySelector(".minion-eyes").appendChild(this._rightEye);
+    }
+
+    [this._leftEye, this._rightEye].forEach((eye) => {
       eye.addEventListener("mouseenter", () => eye.classList.add("closed"));
       eye.addEventListener("mouseleave", () => eye.classList.remove("closed"));
     });
     this.startWatchingMouse(tribe, "left");
-    // this.startWatchingMouse(tribe, right);
-    [this._leftEye, this._rightEye] = eyeElements;
+    this.startWatchingMouse(tribe, "right");
   }
 
   openEye(eye = "left") {
@@ -35,7 +45,7 @@ class Minion {
   }
 
   closeEye(eye = "left") {
-    const eyeElement = eye === "left" ? this._leftEye : this._right;
+    const eyeElement = eye === "left" ? this._leftEye : this._rightEye;
     eyeElement.classList.add("closed");
   }
 
@@ -73,14 +83,14 @@ class Minion {
   }
 
   startWatchingMouse(elementToWatch = tribe, eye = "left") {
-    const eyeElement = eye === "left" ? this._leftEye : this._right;
+    const eyeElement = eye === "left" ? this._leftEye : this._rightEye;
     elementToWatch.addEventListener("mousemove", ({ clientX, clientY }) =>
       this.lookAtMouse(clientX, clientY, eyeElement),
     );
   }
 
   stopWatchingMouse(elementToWatch = tribe, eye = "left") {
-    const eyeElement = eye === "left" ? this._leftEye : this._right;
+    const eyeElement = eye === "left" ? this._leftEye : this._rightEye;
     elementToWatch.removeEventListener("mousemove", ({ clientX, clientY }) =>
       this.lookAtMouse(clientX, clientY, eyeElement),
     );
