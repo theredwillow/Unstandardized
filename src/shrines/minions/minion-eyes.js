@@ -20,21 +20,23 @@ class Minion {
 
     this._minion = document.body.querySelector(`.minion.${name}`);
     this._leftEye = this._minion.querySelector(".eye");
+    this._leftEye.querySelector("#eye-mask").setAttribute("id", `${name}-eye-mask`);
+    this._leftEye.querySelector(".under-eyelid").setAttribute("mask", `url(#${name}-eye-mask)`);
 
     const { eyes: numberOfEyes } = MINIONS[name];
     if (numberOfEyes > 1) {
       this._rightEye = this._leftEye.cloneNode(true);
       this._leftEye.classList.add("left");
       this._rightEye.classList.add("right");
-      this._rightEye.querySelector("#eye-mask").setAttribute("id", "right-eye-mask");
-      this._rightEye.querySelector(".under-eyelid").setAttribute("mask", "url(#right-eye-mask)");
+      this._rightEye.querySelector(`#${name}-eye-mask`).setAttribute("id", `${name}-right-eye-mask`);
+      this._rightEye.querySelector(".under-eyelid").setAttribute("mask", `url(#${name}-right-eye-mask)`);
       this._minion.querySelector(".minion-eyes").appendChild(this._rightEye);
+      this._rightEye.addEventListener("mouseenter", () => this._rightEye.classList.add("closed"));
+      this._rightEye.addEventListener("mouseleave", () => this._rightEye.classList.remove("closed"));
     }
-
-    [this._leftEye, this._rightEye].forEach((eye) => {
-      eye.addEventListener("mouseenter", () => eye.classList.add("closed"));
-      eye.addEventListener("mouseleave", () => eye.classList.remove("closed"));
-    });
+    
+    this._leftEye.addEventListener("mouseenter", () => this._leftEye.classList.add("closed"));
+    this._leftEye.addEventListener("mouseleave", () => this._leftEye.classList.remove("closed"));
     this.startWatchingMouse(tribe, "left");
     this.startWatchingMouse(tribe, "right");
   }
@@ -98,3 +100,5 @@ class Minion {
 }
 
 const kevin = new Minion("kevin");
+const stuart = new Minion("stuart");
+const bob = new Minion("bob");

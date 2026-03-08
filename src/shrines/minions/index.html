@@ -1,5 +1,7 @@
 ---
 title: Minions Shrine
+scripts:
+  - minion-eyes.js
 stylesheets:
   - index.css
 ---
@@ -57,7 +59,11 @@ stylesheets:
   <div class="minion stuart">
     <div class="goggles">
       <h3 class="title">Welcome</h3>
-      <div>Eyes will go here</div>
+      <div>
+        {% renderTemplate "webc" %}
+        <minion-eyes></minion-eyes>
+        {% endrenderTemplate %}
+      </div>
     </div>
 
     <div class="torso">Welcome to the shrine</div>
@@ -66,6 +72,11 @@ stylesheets:
   <div id="devtools" class="minion bob">
     <div class="goggles">
       <h3 class="title">Control Panel</h3>
+      <div>
+        {% renderTemplate "webc" %}
+        <minion-eyes></minion-eyes>
+        {% endrenderTemplate %}
+      </div>
     </div>
 
     <div class="torso">
