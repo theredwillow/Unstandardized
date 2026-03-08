@@ -13,17 +13,19 @@ console.log("Minion eyes script loaded!");
 //   }
 // };
 
+const tribe = document.body.querySelector(".tribe");
+
 class Minion {
   constructor(name) {
     this.name = name;
     this._minion = document.body.querySelector(`.minion.${name}`);
-    const eyeElements = [
-      ...this._minion.querySelectorAll(".eye"),
-    ];
+    const eyeElements = [...this._minion.querySelectorAll(".eye")];
     eyeElements.forEach((eye) => {
       eye.addEventListener("mouseenter", () => eye.classList.add("closed"));
       eye.addEventListener("mouseleave", () => eye.classList.remove("closed"));
     });
+    this.startWatchingMouse(tribe, "left");
+    // this.startWatchingMouse(tribe, right);
     [this._leftEye, this._rightEye] = eyeElements;
   }
 
@@ -32,9 +34,56 @@ class Minion {
     eyeElement.classList.remove("closed");
   }
 
-  closeEye(eye ="left") {
+  closeEye(eye = "left") {
     const eyeElement = eye === "left" ? this._leftEye : this._right;
     eyeElement.classList.add("closed");
+  }
+
+  lookAtMouse(clientX, clientY, eyeElement = this._leftEye) {
+    console.log("mouse moved", clientX, clientY);
+    const svg = eyeElement.closest("svg");
+    const pupil = eyeElement.querySelector(".pupil");
+
+    // 1. Create an SVG point and set it to the mouse coordinates
+    let point = svg.createSVGPoint();
+    point.x = clientX;
+    point.y = clientY;
+
+    // 2. Transform the point into the SVG's coordinate system (viewBox units)
+    // This accounts for the 200px vs 50 unit scaling difference
+    const svgPoint = point.matrixTransform(svg.getScreenCTM().inverse());
+
+    // 3. Get the eye's center in SVG units
+    // Using getBBox() gives coordinates relative to the SVG viewBox
+    const eyeBox = eyeElement.getBBox();
+    const eyeCenterX = eyeBox.x + eyeBox.width / 2;
+    const eyeCenterY = eyeBox.y + eyeBox.height / 2;
+
+    // 4. Calculate angle and distance within the 50x50 coordinate system
+    const angle = Math.atan2(svgPoint.y - eyeCenterY, svgPoint.x - eyeCenterX);
+
+    // Set distance based on viewBox units (e.g., 5-8 units if the eye is ~20 units wide)
+    const distance = 8;
+    const x = Math.cos(angle) * distance;
+    const y = Math.sin(angle) * distance;
+
+    // 5. Apply the movement
+    // If the pupil is a <circle>, update cx/cy; otherwise use transform
+    pupil.setAttribute("transform", `translate(${x}, ${y})`);
+  }
+
+  startWatchingMouse(elementToWatch = tribe, eye = "left") {
+    const eyeElement = eye === "left" ? this._leftEye : this._right;
+    elementToWatch.addEventListener("mousemove", ({ clientX, clientY }) =>
+      this.lookAtMouse(clientX, clientY, eyeElement),
+    );
+  }
+
+  stopWatchingMouse(elementToWatch = tribe, eye = "left") {
+    const eyeElement = eye === "left" ? this._leftEye : this._right;
+    elementToWatch.removeEventListener("mousemove", ({ clientX, clientY }) =>
+      this.lookAtMouse(clientX, clientY, eyeElement),
+    );
   }
 }
 

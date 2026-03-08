@@ -24,9 +24,11 @@
 
     <circle class="eye-lid" cx="25" cy="25" r="20" />
     <g mask="url(#eye-mask)">
-      <circle class="eye-white" cx="25" cy="25" r="20" fill="white" />
-      <circle class="pupil" cx="25" cy="25" r="7" fill="brown" />
-      <circle class="glint" cx="23" cy="22" r="2" fill="white" />
+      <circle class="eye-white" cx="25" cy="25" r="20" />
+      <g class="pupil">
+        <circle class="eye-color" cx="25" cy="25" r="7" />
+        <circle class="glint" cx="23" cy="22" r="2" fill="white" />
+      </g>
     </g>
     <circle class="eye-frame" cx="25" cy="25" r="20" />
   </g>

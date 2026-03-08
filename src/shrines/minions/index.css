@@ -43,6 +43,10 @@
   fill: var(--minion-white);
 }
 
+.minion .eye-color {
+  fill: var(--minion-eye-color);
+}
+
 .minion .visible-area {
   transition: ry 0.15s ease-in-out;
   ry: 15;
