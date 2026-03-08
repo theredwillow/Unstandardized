@@ -25,7 +25,7 @@
 .minion .goggles {
   display: flex;
   background-color: var(--minion-black);
-  margin: 4px;
+  margin: 4px -30px;
   padding: 8px 20px;
   border-radius: 4px;
   color: var(--minion-white);
