@@ -96,6 +96,10 @@
   font-size: 12px;
 }
 
+#devtools .controls {
+  margin: 20px 0;
+}
+
 #devtools .controls .title {
   color: var(--minion-black);
   font-weight: bold;
@@ -107,8 +111,6 @@
 
 #devtools .controls .console {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   gap: 16px;
 }
 
