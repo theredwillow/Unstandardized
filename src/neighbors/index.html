@@ -16,32 +16,9 @@ layout: layouts/base.html
       </li>
     </ol>
   </div>
-  <div id="confucius">
-    <div class="circle">
-      <div class="content">
-        <div>By three methods, we may learn wisdom.</div>
-        <div>First, by reflection, which is noblest</div>
-        <div>Second, by imitation, which is easiest</div>
-        <div>Third, by experience, which is the bitterest</div>
-      </div>
-
-      <!-- Confucius image -->
-      <img src="confucius.png" alt="Confucius" />
-
-      <!-- Confucius footer -->
-      <div
-        style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem"
-      >
-        <div style="grid-column: 1 / -1">
-          <div>Confucius</div>
-        </div>
-
-        <div>Previous</div>
-        <div>once said:</div>
-        <button>Next</button>
-      </div>
-    </div>
-  </div>
+  {% renderTemplate "webc" %}
+  <confucius></confucius>
+  {% endrenderTemplate %}
 </div>
 
 <div id="to-do">

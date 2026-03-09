@@ -13,7 +13,7 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addPassthroughCopy("src/robots.txt");
-  eleventyConfig.addPassthroughCopy("src/**/*.{png,css}");
+  eleventyConfig.addPassthroughCopy("src/**/*.{png,css,ttf}");
   eleventyConfig.addPassthroughCopy("src/shrines/**/*.js");
 
   // Get shrine names from the shrines directory

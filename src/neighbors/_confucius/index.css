@@ -1,0 +1,122 @@
+@font-face {
+  font-family: "Remalos";
+  src: url("/neighbors/_confucius/Remalos.ttf") format("truetype");
+}
+
+:root {
+  --confucius-active-step: 1;
+}
+
+#confucius {
+  border: 1px solid #aaaaaa;
+  border-radius: 5px;
+  padding: 5px;
+  height: 400px;
+  width: 500px;
+  overflow: hidden;
+  position: relative;
+}
+
+#confucius > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* All content steps */
+#confucius .content > div {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 300px;
+  height: 275px;
+  font-weight: bold;
+  font-family: "Remalos";
+  font-size: 36px;
+  z-index: 5;
+}
+
+/* Active content step */
+#confucius .content > :not(.active) {
+  display: none;
+}
+
+/* Method content */
+#confucius .method {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: auto 20px auto;
+  text-align: center;
+}
+
+#confucius .method .number {
+  grid-area: 1 / 1 / 4 / 2;
+  align-content: center;
+  font-size: 100px;
+}
+
+#confucius .method .nominal-verb {
+  grid-area: 1 / 2 / 2 / 3;
+  align-content: end;
+}
+
+#confucius .method .which-is {
+  grid-area: 2 / 2 / 3 / 3;
+  font-size: 16px;
+}
+
+#confucius .method .superlative {
+  grid-area: 3 / 2 / 4 / 3;
+  align-content: start;
+}
+
+/* SVG */
+#confucius #background-circle {
+  fill: #09ff00;
+}
+
+#confucius #figure {
+  transition: transform 0.5s linear;
+}
+
+#confucius #figure.in-corner {
+  transform: scale(0.5) translate(240px, 200px);
+}
+
+#confucius #outline {
+  fill: #000000;
+}
+
+#confucius #hair {
+  fill: #d0b1fc;
+}
+
+#confucius #robe {
+  fill: #ffaaaa;
+}
+
+#confucius #robe-trim {
+  fill: #ff5aaa;
+}
+
+#confucius #eyes {
+  fill: #786721;
+}
+
+#confucius #lips {
+  fill: #ff9caa;
+}
+
+#confucius #skin {
+  fill: #ffedaa;
+}
+
+#confucius #fingernails {
+  fill: #ffffff;
+}
+
+#confucius #eyes-whites {
+  fill: #ffffff;
+}

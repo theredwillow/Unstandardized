@@ -1,7 +1,3 @@
-:root {
-  --confucius-active-step: 1;
-}
-
 #back-button {
   margin: 10px;
 }
@@ -11,49 +7,6 @@
   justify-content: center;
   align-items: center;
   gap: 50px;
-}
-
-#confucius {
-  border: 1px solid #aaaaaa;
-  border-radius: 5px;
-  padding: 5px;
-  height: 400px;
-  width: 500px;
-  overflow: hidden;
-}
-
-#confucius .circle {
-  position: relative;
-  top: 22px;
-  left: 22px;
-  width: 500px;
-  height: 500px;
-  background: #0066ff;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-}
-
-/* All content steps */
-#confucius .content div {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  font-weight: bold;
-}
-
-/* Active content step */
-#confucius .content .active {
-  display: block;
-}
-
-#confucius img {
-  width: 425px;
-  height: auto;
 }
 
 .neighborhood {
