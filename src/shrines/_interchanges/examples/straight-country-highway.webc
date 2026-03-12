@@ -10,6 +10,7 @@
       /* 1. Hardware acceleration & Shared logic */
       .car {
         will-change: transform;
+        x: -40;
         animation: drive var(--duration, 8s) linear infinite;
         animation-delay: var(--delay, 0s);
       }
@@ -17,7 +18,7 @@
       /* 2. Keyframes using transforms (GPU friendly) */
       @keyframes drive {
         from {
-          transform: translateX(-10%);
+          transform: translateX(-1%);
         }
         to {
           transform: translateX(110%);
