@@ -1,0 +1,16 @@
+<svg viewBox="0 0 800 200" xmlns="http://www.w3.org" class="interchange-canvas">
+  <!-- Render Roads -->
+  {% for road in roadways %}
+    <path class="road-base type-{{ road.type }}" d="{{ road.path }}" stroke="#444" stroke-width="{{ road.width }}" />
+    <path class="markings" d="{{ road.path }}" />
+  {% endfor %}
+
+  <!-- Render Traffic -->
+  {% for vehicle in traffic %}
+    <use href="#v-{{ vehicle.type }}" 
+         class="vehicle {{ vehicle.type }} {{ vehicle.behavior.direction }}"
+         y="{{ vehicle.lane_y }}"
+         fill="{{ vehicle.behavior.color }}"
+         style="--speed: {{ vehicle.behavior.speed }}; --delay: {{ vehicle.behavior.delay }};" />
+  {% endfor %}
+</svg>

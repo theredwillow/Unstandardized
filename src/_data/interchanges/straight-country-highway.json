@@ -1,0 +1,37 @@
+{
+  "id": "straight_country_road",
+  "name": "Quiet Country Road",
+
+  "stats": {
+    "lanes": "1 east-bound. 1 west-bound.",
+    "shoulders": "None.",
+    "traffic": "Rare."
+  },
+
+  "roadways": [
+    { "id": "main", "path": "M0,100 H800", "width": 80, "type": "asphalt" }
+  ],
+
+  "traffic": [
+    {
+      "type": "sedan",
+      "lane_y": 75,
+      "behavior": {
+        "color": "#e74c3c",
+        "speed": "8s",
+        "delay": "-2s",
+        "direction": "westbound"
+      }
+    },
+    {
+      "type": "tractor",
+      "lane_y": 115,
+      "behavior": {
+        "color": "#367C2B",
+        "speed": "40s",
+        "delay": "1.25s",
+        "direction": "eastbound"
+      }
+    }
+  ]
+}

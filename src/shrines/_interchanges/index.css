@@ -3,6 +3,7 @@
 }
 
 .interchange-display > .stat > .name {
+  text-transform: capitalize;
   font-weight: bold;
 }
 

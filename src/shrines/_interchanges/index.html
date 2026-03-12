@@ -3,14 +3,46 @@ title: Highway Interchanges
 layout: layouts/note.html
 stylesheets:
   - index.css
+  - roadways.css
 todo:
   - 11ty-driven template creation of HTML and CSS
   - Remember to include "lil-old-lady" as a possible class for the traffic generator
 ---
 
-{% renderTemplate "webc" %}
-<straight-country-highway></straight-country-highway>
-{% endrenderTemplate %}
+<svg id="global-garage" style="display: none">
+  <defs>
+    {% for type, path in vehicles %}
+    <path id="v-{{ type }}" d="{{ path }}" />
+    {% endfor %}
+  </defs>
+</svg>
+
+<!-- TODO Figure out ecosystem vs .box.interchange-display -->
+<div class="ecosystem-grid box interchange-display">
+  {% for key, tile in interchanges %} {% set roadways = tile.roadways %} {% set
+  traffic = tile.traffic %}
+  <div class="interchange-tile">{% include "_interchange.njk" %}</div>
+  {% for name, stat in tile.stats %}
+  <div class="stat">
+    <div class="name">{{ name }}</div>
+    <div class="value">{{ stat }}</div>
+  </div>
+  {% endfor %} {% endfor %}
+</div>
+
+<script>
+  // Simple Intersection Observer to pause off-screen animations
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("paused", !entry.isIntersecting);
+      });
+    },
+    { threshold: 0.1 },
+  );
+
+  document.querySelectorAll(".tile").forEach((tile) => observer.observe(tile));
+</script>
 
 <div id="lack-of-public-transit" class="box">
   <div class="title">Wait? Where are the buses? No light rail?</div>
