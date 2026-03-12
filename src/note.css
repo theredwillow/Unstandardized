@@ -45,7 +45,7 @@ body {
   border-width: 3px 4px 3px 5px;
   border-radius: 97% 2% 92% 3%/4% 95% 6% 95%;
   transform: rotate(1deg);
-  margin: 3px;
+  margin: 25px;
 }
 
 .box:nth-of-type(even) {
@@ -53,8 +53,10 @@ body {
   border-radius: 99% 1% 94% 3%/5% 97% 8% 96%;
 }
 
-h3.title {
+.box > .title {
   line-height: 0;
+  font-size: 32px;
+  margin-bottom: 22px;
 }
 
 img:not(.icon) {
@@ -77,4 +79,10 @@ img:not(.icon):nth-of-type(even) {
 .red {
   color: var(--red-graphite);
   border-color: var(--red-graphite);
+}
+
+.placeholder {
+  color: gray;
+  font-style: italic;
+  opacity: 0.8;
 }

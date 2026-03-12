@@ -1,0 +1,37 @@
+.interchange-display > .stat {
+  margin-bottom: 6px;
+}
+
+.interchange-display > .stat > .name {
+  font-weight: bold;
+}
+
+.interchange-display > .stat > .name::after {
+  content: ":";
+}
+
+/* TODO .aside { } */
+
+span.lil-old-lady {
+  color: gray;
+}
+
+.hint {
+  display: inline-block; /* Required for transform */
+  padding: 5px 10px;
+  cursor: pointer;
+  /* TODO cursor: url('path-to-image.png'), auto; */
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(1.05); /* Slight grow */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
