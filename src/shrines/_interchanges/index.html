@@ -8,22 +8,9 @@ todo:
   - Remember to include "lil-old-lady" as a possible class for the traffic generator
 ---
 
-<div class="box interchange-display">
-  <div class="title">Straight country highway</div>
-  <div class="placeholder">(Provide svg example here.)</div>
-  <div class="stat">
-    <div class="name">Lanes</div>
-    <div class="value">1 east-bound. 1 west-bound.</div>
-  </div>
-  <div class="stat">
-    <div class="name">Shoulders</div>
-    <div class="value">None</div>
-  </div>
-  <div class="stat">
-    <div class="name">Traffic</div>
-    <div class="value">Rare</div>
-  </div>
-</div>
+{% renderTemplate "webc" %}
+<straight-country-highway></straight-country-highway>
+{% endrenderTemplate %}
 
 <div id="lack-of-public-transit" class="box">
   <div class="title">Wait? Where are the buses? No light rail?</div>
