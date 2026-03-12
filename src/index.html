@@ -23,7 +23,11 @@ layout: layouts/base.html
     shrine.filePathStem.split('/') %} {% set folderName =
     pathParts[pathParts.length - 2] %}
     <a href="/shrines/{{ folderName }}">
+      {% if folderName[0] !== '_' %}
       <img src="/shrines/{{ folderName }}/button-88x31.png" />
+      {% else %}
+      <div class="draft-88x31">{{ folderName.slice(1) }}</div>
+      {% endif %}
     </a>
     {%- endfor %}
   </div>

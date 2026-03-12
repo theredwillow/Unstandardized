@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }} (WIP)</title>
+    <link href="/note.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% getBundleFileUrl 'css' %}" />
+    {% for stylesheet in stylesheets %}
+    <link
+      href="{{ stylesheet }}"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    {% endfor %}
+    <script src="{% getBundleFileUrl 'js' %}" defer></script>
+    {% for script in scripts %}
+    <script src="{{ script }}" defer></script>
+    {% endfor %}
+  </head>
+  <body>
+    {% if page.url != "/" %}
+    <header>
+      <nav>
+        <a href="/">← Back to home page</a>
+      </nav>
+    </header>
+    {% endif %}
+    <h1 class="sheet-title">{{ title }} (WIP)</h1>
+    <div class="about-notes">
+      <h3>What am I looking at?</h3>
+      This page represents notes for a work in progress. Instead of keeping
+      ideas to myself, I like to document them on my website so that I can
+      immediately begin working on the components involved in the work.
+    </div>
+    {% if todo.length > 0 %}
+    <div id="to-do" class="blue box">
+      <h3 class="title">To Do</h3>
+      <ul>
+        {% for item in todo %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %} {% if avoid.length > 0 %}
+    <div id="avoid" class="red box">
+      <h3 class="title">Avoid</h3>
+      <ul>
+        {% for item in avoid %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %} {{ content | safe }}
+  </body>
+</html>

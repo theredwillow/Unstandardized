@@ -1,0 +1,80 @@
+@font-face {
+  font-family: "Vividly-Regular";
+  src: url("/_fonts/Vividly-Regular.otf") format("opentype");
+}
+
+:root {
+  --graphite: #515254;
+  --red-graphite: #f16060;
+  --blue-graphite: #6363fc;
+}
+
+body {
+  /* Set the background color of the 'paper' */
+  background-color: #fff;
+
+  /* Create the horizontal lines with a repeating linear gradient */
+  background-image: 
+        /* The red margin line (vertical gradient) */
+    linear-gradient(
+      90deg,
+      transparent 79px,
+      rgba(255, 0, 0, 0.3) 0,
+      rgba(255, 0, 0, 0.3) 5.1em,
+      transparent 5.1em
+    ),
+    /* The blue writing lines (horizontal gradient) */
+    linear-gradient(rgba(0, 0, 255, 0.3) 1px, transparent 0);
+
+  /* Define the size of the repeating background pattern */
+  /* 2em (twice the font size) provides good spacing */
+  background-size: 100% 2em;
+
+  /* Optional: Add some padding for better presentation */
+  padding: 1em;
+  padding-left: 5.5em;
+
+  font-family: "Vividly-Regular";
+  color: var(--graphite);
+}
+
+.box {
+  display: inline-block;
+  border: 1px solid var(--graphite);
+  padding: 1em;
+  border-width: 3px 4px 3px 5px;
+  border-radius: 97% 2% 92% 3%/4% 95% 6% 95%;
+  transform: rotate(1deg);
+  margin: 3px;
+}
+
+.box:nth-of-type(even) {
+  transform: rotate(-2deg);
+  border-radius: 99% 1% 94% 3%/5% 97% 8% 96%;
+}
+
+h3.title {
+  line-height: 0;
+}
+
+img:not(.icon) {
+  box-shadow: 0px 0px 0px 0.75px #d5d5d5;
+  border-radius: 5px;
+  border: 10px solid #ffffff;
+  margin: 10px;
+  transform: rotate(2deg);
+}
+
+img:not(.icon):nth-of-type(even) {
+  transform: rotate(-1deg);
+}
+
+.blue {
+  color: var(--blue-graphite);
+  border-color: var(--blue-graphite);
+}
+
+.red {
+  color: var(--red-graphite);
+  border-color: var(--red-graphite);
+}
