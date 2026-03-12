@@ -18,16 +18,19 @@ todo:
 </svg>
 
 <!-- TODO Figure out ecosystem vs .box.interchange-display -->
-<div class="ecosystem-grid box interchange-display">
+<div class="ecosystem-grid">
   {% for key, tile in interchanges %} {% set roadways = tile.roadways %} {% set
   traffic = tile.traffic %}
-  <div class="interchange-tile">{% include "_interchange.njk" %}</div>
-  {% for name, stat in tile.stats %}
-  <div class="stat">
-    <div class="name">{{ name }}</div>
-    <div class="value">{{ stat }}</div>
+  <div class="box interchange-display">
+    <div class="name">{{ tile.name }}</div>
+    {% include "_interchange.njk" %} {% for name, stat in tile.stats %}
+    <div class="stat">
+      <div class="name">{{ name }}</div>
+      <div class="value">{{ stat }}</div>
+    </div>
+    {% endfor %}
   </div>
-  {% endfor %} {% endfor %}
+  {% endfor %}
 </div>
 
 <script>

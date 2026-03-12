@@ -1,3 +1,9 @@
+.interchange-display > svg {
+  border: 1px solid #00000036;
+  width: 300px;
+  height: 300px;
+}
+
 .interchange-display > .stat {
   margin-bottom: 6px;
 }
