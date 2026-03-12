@@ -6,6 +6,7 @@
     <title>{{ title }} (WIP)</title>
     <link href="/note.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="stylesheet" href="{% getBundleFileUrl 'css' %}" />
+    <!-- TODO Make this layout inherit base.html so you don't duplicate stuff like this -->
     {% for stylesheet in stylesheets %}
     <link
       href="{{ stylesheet }}"
