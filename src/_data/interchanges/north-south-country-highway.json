@@ -10,13 +10,13 @@
 
   "roadways": [
     {
-      "id": "northbound",
+      "id": "southbound",
       "path": "M385,-290 V490",
       "width": 50,
       "type": "asphalt"
     },
     {
-      "id": "southbound",
+      "id": "northbound",
       "path": "M445,490 V-290",
       "width": 50,
       "type": "asphalt"
@@ -27,7 +27,6 @@
     {
       "type": "sedan",
       "roadway": "southbound",
-      "lane": 1,
       "behavior": {
         "color": "#e74c3c",
         "speed": "8s",
@@ -37,7 +36,6 @@
     {
       "type": "truck",
       "roadway": "northbound",
-      "lane": 1,
       "behavior": {
         "color": "#367C2B",
         "speed": "12s",

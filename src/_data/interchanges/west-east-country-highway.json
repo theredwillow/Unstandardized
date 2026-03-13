@@ -17,7 +17,6 @@
     {
       "type": "sedan",
       "roadway": "westbound",
-      "lane": 1,
       "behavior": {
         "color": "#e74c3c",
         "speed": "8s",
@@ -27,7 +26,6 @@
     {
       "type": "tractor",
       "roadway": "eastbound",
-      "lane": 1,
       "behavior": {
         "color": "#367C2B",
         "speed": "40s",

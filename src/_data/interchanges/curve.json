@@ -1,0 +1,35 @@
+{
+  "id": "curve",
+  "name": "Northbound to Eastbound Curve",
+
+  "stats": {
+    "lanes": "1 lane that starts out northbound and heads eastbound.",
+    "shoulders": "None.",
+    "traffic": "Normal."
+  },
+
+  "roadways": [
+    { "id": "ne-curve", "path": "M 450,500 C 450,425 450,275 450,175 C 450,100 525,50 600,50 C 650,50 725,50 800,50", "width": 50, "type": "asphalt" }
+  ],
+
+  "traffic": [
+    {
+      "type": "sedan",
+      "roadway": "ne-curve",
+      "behavior": {
+        "color": "#e74c3c",
+        "speed": "8s",
+        "delay": "-2s"
+      }
+    },
+    {
+      "type": "truck",
+      "roadway": "ne-curve",
+      "behavior": {
+        "color": "#367C2B",
+        "speed": "9s",
+        "delay": "0.25s"
+      }
+    }
+  ]
+}

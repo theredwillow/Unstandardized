@@ -42,3 +42,15 @@ span.lil-old-lady {
     transform: scale(1);
   }
 }
+
+.things-to-consider {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.things-to-consider > .box {
+  width: 250px;
+  height: 125px;
+  overflow-y: auto;
+}
