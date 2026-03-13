@@ -9,6 +9,14 @@ todo:
   - Remember to include "lil-old-lady" as a possible class for the traffic generator
 ---
 
+<div class="box">
+  This page was inspired by the
+  <a href="https://en.wikipedia.org/wiki/Interchange_(road)" target="_blank"
+    >Interchange (road)</a
+  >
+  wikipedia page.
+</div>
+
 <svg id="global-garage" style="display: none">
   <defs>
     {% for type, path in vehicles %}
@@ -19,11 +27,11 @@ todo:
 
 <!-- TODO Figure out ecosystem vs .box.interchange-display -->
 <div class="ecosystem-grid">
-  {% for key, tile in interchanges %} {% set roadways = tile.roadways %} {% set
-  traffic = tile.traffic %}
+  {% for key, interchange in interchanges %} {% set roadways =
+  interchange.roadways %} {% set traffic = interchange.traffic %}
   <div class="box interchange-display">
-    <div class="name">{{ tile.name }}</div>
-    {% include "_interchange.njk" %} {% for name, stat in tile.stats %}
+    <div class="name">{{ interchange.name }}</div>
+    {% include "_interchange.njk" %} {% for name, stat in interchange.stats %}
     <div class="stat">
       <div class="name">{{ name }}</div>
       <div class="value">{{ stat }}</div>
@@ -44,7 +52,9 @@ todo:
     { threshold: 0.1 },
   );
 
-  document.querySelectorAll(".tile").forEach((tile) => observer.observe(tile));
+  document
+    .querySelectorAll(".interchange")
+    .forEach((interchange) => observer.observe(interchange));
 </script>
 
 <div id="lack-of-public-transit" class="box">

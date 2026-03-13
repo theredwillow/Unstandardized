@@ -1,20 +1,7 @@
-.interchange-canvas.paused * {
-  animation-play-state: paused !important;
-}
-
 /* Global Road Styles */
 .road-base { fill: none; stroke-linecap: round; }
 .type-asphalt { stroke: #444; }
 .type-concrete { stroke: #999; }
-
-/* Global Marking Styles */
-.markings { fill: none; stroke: #fff; stroke-width: 2; stroke-dasharray: 20, 25; opacity: 0.5; }
-/* TODO Rename, add more than just two opposing lanes */
-
-.vehicle {
-  will-change: transform;
-  animation: drive var(--speed) linear infinite var(--delay);
-}
 
 /* TODO Get length dynamically from vehicles.json path coordinates */
 .sedan {
@@ -27,18 +14,4 @@
 
 .tractor {
   x: -30;
-}
-
-@keyframes drive {
-  from {
-    transform: translateX(-1%);
-  }
-  to {
-    transform: translateX(110%);
-  }
-}
-
-.westbound {
-  transform-origin: center;
-  scale: -1 1; /* Flips the car and the animation direction */
 }

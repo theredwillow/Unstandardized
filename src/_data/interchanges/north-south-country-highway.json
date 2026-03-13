@@ -1,0 +1,48 @@
+{
+  "id": "ns_country_road",
+  "name": "Quiet Country Road (North - South)",
+
+  "stats": {
+    "lanes": "1 north-bound. 1 south-bound.",
+    "shoulders": "None.",
+    "traffic": "Rare."
+  },
+
+  "roadways": [
+    {
+      "id": "northbound",
+      "path": "M385,-290 V490",
+      "width": 50,
+      "type": "asphalt"
+    },
+    {
+      "id": "southbound",
+      "path": "M445,490 V-290",
+      "width": 50,
+      "type": "asphalt"
+    }
+  ],
+
+  "traffic": [
+    {
+      "type": "sedan",
+      "roadway": "southbound",
+      "lane": 1,
+      "behavior": {
+        "color": "#e74c3c",
+        "speed": "8s",
+        "delay": "-2s"
+      }
+    },
+    {
+      "type": "truck",
+      "roadway": "northbound",
+      "lane": 1,
+      "behavior": {
+        "color": "#367C2B",
+        "speed": "12s",
+        "delay": "1.25s"
+      }
+    }
+  ]
+}

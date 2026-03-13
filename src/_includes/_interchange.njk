@@ -1,16 +1,18 @@
 <svg viewBox="0 0 800 200" xmlns="http://www.w3.org" class="interchange-canvas">
   <!-- Render Roads -->
   {% for road in roadways %}
-    <path class="road-base type-{{ road.type }}" d="{{ road.path }}" stroke="#444" stroke-width="{{ road.width }}" />
-    <path class="markings" d="{{ road.path }}" />
+    <path id="{{ interchange.id }}-{{ road.id }}" class="road-base type-{{ road.type }}" d="{{ road.path }}" stroke="#444" stroke-width="{{ road.width }}" />
   {% endfor %}
 
   <!-- Render Traffic -->
   {% for vehicle in traffic %}
     <use href="#v-{{ vehicle.type }}" 
-         class="vehicle {{ vehicle.type }} {{ vehicle.behavior.direction }}"
-         y="{{ vehicle.lane_y }}"
-         fill="{{ vehicle.behavior.color }}"
-         style="--speed: {{ vehicle.behavior.speed }}; --delay: {{ vehicle.behavior.delay }};" />
+         class="vehicle {{ vehicle.type }}"
+         y="-10"
+         fill="{{ vehicle.behavior.color }}">
+      <animateMotion dur="{{ vehicle.behavior.speed }}" begin="{{ vehicle.behavior.delay }}" repeatCount="indefinite" rotate="auto">
+        <mpath href="#{{ interchange.id }}-{{ vehicle.roadway }}" />
+      </animateMotion>
+    </use>
   {% endfor %}
 </svg>

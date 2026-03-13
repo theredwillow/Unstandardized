@@ -1,0 +1,38 @@
+{
+  "id": "we_country_road",
+  "name": "Quiet Country Road (West - East)",
+
+  "stats": {
+    "lanes": "1 west-bound. 1 east-bound.",
+    "shoulders": "None.",
+    "traffic": "Rare."
+  },
+
+  "roadways": [
+    { "id": "westbound", "path": "M800,70 H-800", "width": 50, "type": "asphalt" },
+    { "id": "eastbound", "path": "M0,125 H800", "width": 50, "type": "asphalt" }
+  ],
+
+  "traffic": [
+    {
+      "type": "sedan",
+      "roadway": "westbound",
+      "lane": 1,
+      "behavior": {
+        "color": "#e74c3c",
+        "speed": "8s",
+        "delay": "-2s"
+      }
+    },
+    {
+      "type": "tractor",
+      "roadway": "eastbound",
+      "lane": 1,
+      "behavior": {
+        "color": "#367C2B",
+        "speed": "40s",
+        "delay": "1.25s"
+      }
+    }
+  ]
+}
