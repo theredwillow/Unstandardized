@@ -1,4 +1,0 @@
-<svg viewBox="0 0 800 200" xmlns="http://www.w3.org" class="interchange-canvas">
-  <path id="northbound" d="M385,-290 V490" stroke="#444" stroke-width="50"></path>
-  <path id="southbound" d="M445,490 V-290" stroke="#444" stroke-width="50"></path>
-</svg>
