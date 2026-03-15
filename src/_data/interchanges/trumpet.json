@@ -1,0 +1,83 @@
+{
+  "id": "trumpet",
+  "name": "Westbound trumpet into North / South",
+
+  "stats": {
+    "lanes": "2 lanes headed northbound and southbound. Two lanes headed eastbound and westbound, westbound ending at NS eastbound starting as NS.",
+    "shoulders": "None.",
+    "traffic": "Normal."
+  },
+
+  "roadways": [
+    { "id": "northbound", "path": "m 390,-300 0,800", "width": 50, "type": "asphalt" },
+    { "id": "southbound", "path": "m 450,500 0,-800", "width": 50, "type": "asphalt" },
+    { "id": "eb-nb-curve", "path": "M 449.25235,-59.883221 C 469.36913,29.369128 545,140 610,165", "width": 50, "type": "asphalt" },
+    { "id": "nb-eb-curve", "path": "m 450,405 c 35,-90 80,-160 160,-175", "width": 50, "type": "asphalt" },
+    { "id": "wb-sb-trumpet", "path": "M 800,165 H 325 c -25,0 -70,-5 -100,-25 -90,-65 -55,-165 45,-190 50,0 120,15 120,115", "width": 50, "type": "asphalt" },
+    { "id": "sb-eb-trumpet", "path": "M 390,-245 C 390,-190 335,-130 255,-110 c -95,25 -115,60 -135,90 -40,55 -35,160 30,210 50,40 150,40 225,40 h 425", "width": 50, "type": "asphalt" }
+  ],
+
+  "routes": [
+    { "id": "westbound-to-northbound", "path": "M 800,165 H 610 C 575,165 450,0 450,-50 L 450,-300" },
+    { "id": "northbound-to-eastbound", "path": "M 450,500 L 450,380 C 450,330 575,230 610,230 L 800,230" },
+    { "id": "southbound-to-eastbound", "path": "M 390,-300 C 385,-225 400,-160 273,-115 C 200,-100 100,-35 100,60 C 80,290 450,225 605,225 L 800,230" },
+    { "id": "westbound-to-southbound", "path": "M 800,165 H 605 c 15,0 -220,5 -220,5 C 290,170 160,155 175,40 185,-40 265,-50 300,-50 c 35,0 85,25 90,80 L 390,5000" }
+  ],
+
+  "traffic": [
+    {
+      "type": "sedan",
+      "roadway": "northbound",
+      "behavior": {
+        "color": "#e74c3c",
+        "speed": "8s",
+        "delay": "-2s"
+      }
+    },
+    {
+      "type": "truck",
+      "roadway": "southbound",
+      "behavior": {
+        "color": "#367C2B",
+        "speed": "9s",
+        "delay": "0.25s"
+      }
+    },
+    {
+      "type": "truck",
+      "roadway": "westbound-to-northbound",
+      "behavior": {
+        "color": "yellow",
+        "speed": "9s",
+        "delay": "2s"
+      }
+    },
+    {
+      "type": "sedan",
+      "roadway": "northbound-to-eastbound",
+      "behavior": {
+        "color": "gray",
+        "speed": "8s",
+        "delay": "-2s"
+      }
+    },
+    {
+      "type": "sedan",
+      "roadway": "southbound-to-eastbound",
+      "behavior": {
+        "color": "gray",
+        "speed": "12s",
+        "delay": "-1s"
+      }
+    },
+    {
+      "type": "sedan",
+      "roadway": "westbound-to-southbound",
+      "behavior": {
+        "color": "limegreen",
+        "speed": "50s",
+        "delay": "5s"
+      }
+    }
+  ]
+}

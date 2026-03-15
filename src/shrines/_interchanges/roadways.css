@@ -3,6 +3,13 @@
 .type-asphalt { stroke: #444; }
 .type-concrete { stroke: #999; }
 
+.route {
+  display: none;
+  /* stroke: red;
+  stroke-width: 5;
+  fill: none; */
+}
+
 /* TODO Get length dynamically from vehicles.json path coordinates */
 .sedan {
  x: -40;

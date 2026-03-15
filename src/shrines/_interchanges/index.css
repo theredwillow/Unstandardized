@@ -1,3 +1,7 @@
+.interchange-display {
+  max-width: 300px;
+}
+
 .interchange-display > svg {
   border: 1px solid #00000036;
   width: 300px;

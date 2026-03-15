@@ -5,7 +5,8 @@ stylesheets:
   - index.css
   - roadways.css
 todo:
-  - 11ty-driven template creation of HTML and CSS
+  - Update the draft layout to spell out what WIP means
+  - Use mask to hide overpassed spots of roadways
   - Remember to include "lil-old-lady" as a possible class for the traffic generator
 ---
 
@@ -27,8 +28,7 @@ todo:
 
 <!-- TODO Figure out ecosystem vs .box.interchange-display -->
 <div class="ecosystem-grid">
-  {% for key, interchange in interchanges %} {% set roadways =
-  interchange.roadways %} {% set traffic = interchange.traffic %}
+  {% for key, interchange in interchanges %}
   <div class="box interchange-display">
     <div class="name">{{ interchange.name }}</div>
     {% include "_interchange.njk" %} {% for name, stat in interchange.stats %}

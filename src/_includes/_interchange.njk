@@ -1,11 +1,16 @@
 <svg viewBox="0 0 800 200" xmlns="http://www.w3.org" class="interchange-canvas">
   <!-- Render Roads -->
-  {% for road in roadways %}
+  {% for road in interchange.roadways %}
     <path id="{{ interchange.id }}-{{ road.id }}" class="road-base type-{{ road.type }}" d="{{ road.path }}" stroke-width="{{ road.width }}" />
   {% endfor %}
 
+  <!-- Add invisible paths for motorists to travel between roads -->
+  {% for route in interchange.routes %}
+    <path id="{{ interchange.id }}-{{ route.id }}" class="route" d="{{ route.path }}" />
+  {% endfor %}
+
   <!-- Render Traffic -->
-  {% for vehicle in traffic %}
+  {% for vehicle in interchange.traffic %}
     <use href="#v-{{ vehicle.type }}" 
          class="vehicle {{ vehicle.type }}"
          y="-10"
