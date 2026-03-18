@@ -3,7 +3,7 @@
 
 <div id="confucius">
   <div class="content" onclick="nextStep()">
-    <div class="active">Confucius once said...</div>
+    <div class="active">Click here to hear some Confucius wisdom.</div>
 
     <div>By three methods, we may learn wisdom.</div>
 

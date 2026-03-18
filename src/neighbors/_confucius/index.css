@@ -8,7 +8,6 @@
 }
 
 #confucius {
-  border: 1px solid #aaaaaa;
   border-radius: 5px;
   padding: 5px;
   height: 400px;
@@ -36,6 +35,7 @@
   font-family: "Remalos";
   font-size: 36px;
   z-index: 5;
+  cursor: pointer;
 }
 
 /* Active content step */
