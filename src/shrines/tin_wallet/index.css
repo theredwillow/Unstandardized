@@ -100,3 +100,15 @@ body {
 .fact {
   width: 100%;
 }
+
+#wimse .title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+#other-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 300px;
+}

@@ -54,3 +54,28 @@ if (next) {
 } else {
   nextLink.style.display = "none";
 }
+
+const otherMembers = WIMSEsites.filter(
+  (site, index) => index !== thisWIMSEIndex,
+);
+const otherMembersEl = document.getElementById("other-members");
+otherMembers.forEach((member) => {
+  const a = document.createElement("a");
+  a.href = member.link;
+  a.title = member.name;
+  const img = document.createElement("img");
+  img.style.width = "220px";
+  img.style.height = "150px";
+  img.src = member.closed;
+  img.alt = member.name;
+  img.addEventListener("mouseover", () => {
+    img.src = member.open;
+    img.style.height = "300px";
+  });
+  img.addEventListener("mouseleave", () => {
+    img.src = member.closed;
+    img.style.height = "150px";
+  });
+  a.appendChild(img);
+  otherMembersEl.appendChild(a);
+});
