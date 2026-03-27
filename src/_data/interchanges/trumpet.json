@@ -1,6 +1,10 @@
 {
   "id": "trumpet",
   "name": "Westbound trumpet into North / South",
+  "photo": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Ottawa_River_Parkway_interchange.jpg/330px-Ottawa_River_Parkway_interchange.jpg",
+    "location": "A trumpet interchange on the Kichi Zibi Mikan (former John A. Macdonald) Parkway in Ottawa, Ontario 45°24′41″N 75°44′7″W"
+  },
 
   "stats": {
     "lanes": "2 lanes headed northbound and southbound. Two lanes headed eastbound and westbound, westbound ending at NS eastbound starting as NS.",

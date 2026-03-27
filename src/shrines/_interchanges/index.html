@@ -37,6 +37,9 @@ todo:
       <div class="value">{{ stat }}</div>
     </div>
     {% endfor %}
+    {% if interchange.photo %}
+    <img src="{{ interchange.photo.url }}" alt="{{ interchange.photo.location }}" />
+    {% endif %}
   </div>
   {% endfor %}
 </div>
