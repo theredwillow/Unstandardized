@@ -38,6 +38,14 @@ body {
   color: var(--graphite);
 }
 
+#wip-tag {
+  position: absolute;
+  top: 0;
+  right: 4vw;
+  width: 12vw;
+  min-width: 200px;
+}
+
 .box {
   display: inline-block;
   border: 1px solid var(--graphite);
