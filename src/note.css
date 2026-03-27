@@ -73,6 +73,7 @@ img:not(.icon) {
   border: 10px solid #ffffff;
   margin: 10px;
   transform: rotate(2deg);
+  background-color: #ffffff;
 }
 
 img:not(.icon):nth-of-type(even) {
